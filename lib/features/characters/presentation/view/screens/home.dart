@@ -46,6 +46,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final state = context.watch<CharacterBloc>();
     return Scaffold(
         body: Container(
@@ -69,13 +70,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: Image.asset("assets/rickmorty.png")),
-                  const SizedBox(
-                    height: 50,
+                  SizedBox(
+                    height: size.height * 0.05,
                   ),
                   state.state.characterList.isEmpty
                       ? const SizedBox()
                       : SizedBox(
-                          height: 400,
+                          height: size.height * 0.41,
                           child: PageView.builder(
                             clipBehavior: Clip.none,
                             controller: _pageController,
@@ -107,6 +108,7 @@ class ParallaxCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<CharacterBloc>();
     final GlobalKey backgroundImageKey = GlobalKey();
+    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
         context.read<CharacterBloc>().add(
@@ -114,7 +116,7 @@ class ParallaxCard extends StatelessWidget {
         context.push("/character/detail", extra: character);
       },
       child: Container(
-          height: 300,
+          height: size.height * 0.32,
           margin: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
