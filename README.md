@@ -1,5 +1,5 @@
 
-# Rick y morty
+# Rick And Morty in Flutter with CLEAN ARQUITECTURE AND GOOD DESIGN PATTERNS
 
 This project runs with this settings:
 
@@ -11,6 +11,16 @@ The code was built in VISUAl STUDIO CODE
 
 This project uses FVM 2.4.1 
 
+
+## This app uses the Clean Architecture
+* Organized by Features
+  - This allows for integrating new features faster.
+* State Management
+  - The tool used is Bloc provider, one of the most popular in the Flutter developer community.
+* Network Image Load Performance
+  - Images are loaded faster than with normal image processors.
+* High-Quality Routing
+  - A tool that allows the app to navigate between screens faster.
 
 
 ## STEPS TO RUN THE PROJECT
